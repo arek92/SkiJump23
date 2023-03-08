@@ -7,9 +7,12 @@ import java.util.Scanner;
 
 public class Service {
 
-    private static Jurors jurors = new Jurors();
-    private static final int beamHigh = 5;
-    private static Service service = new Service();
+    private static final Jurors jurors = new Jurors();
+    //private static final int beamHigh = 5;
+    private static final Service service = new Service();
+
+
+
 
 
 

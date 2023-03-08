@@ -16,14 +16,14 @@ public class SkiTeam {
         this.jumperList = jumperList;
     }
 
-    public List<SkiJumper> germanTeam() {
-        List<SkiJumper> germanTeam = new ArrayList<>();
-        germanTeam.add(new SkiJumper("Andreas", "Welinger",service.resultOfJumpJurorsWindCondition()));
-        germanTeam.add(new SkiJumper("Martin ", "Schmitt",service.resultOfJumpJurorsWindCondition()));
-        germanTeam.add(new SkiJumper("Markus", "Eichenbichler",service.resultOfJumpJurorsWindCondition()));
-        germanTeam.add(new SkiJumper("Sven", "Hanavald",service.resultOfJumpJurorsWindCondition()));
-        return germanTeam;
-    }
+//    public List<SkiJumper> germanTeam() {
+//        List<SkiJumper> germanTeam = new ArrayList<>();
+//        germanTeam.add(new SkiJumper("Andreas", "Welinger"));
+//        germanTeam.add(new SkiJumper("Martin ", "Schmitt"));
+//        //germanTeam.add(new SkiJumper("Markus", "Eichenbichler",service.resultOfJumpJurorsWindCondition()));
+//       // germanTeam.add(new SkiJumper("Sven", "Hanavald",service.resultOfJumpJurorsWindCondition()));
+//        return germanTeam;
+//    }
 
     /*
     public List<SkiJumper> slovakiaTeam() {

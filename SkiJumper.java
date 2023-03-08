@@ -3,8 +3,8 @@ public class SkiJumper {
         private String firstName;
         private String lastName;
 
-        private Service service = new Service();
-        private double resultOfJump = service.resultOfJumpJurorsWindCondition();
+        private  final Service service = new Service();
+        private double resultOfJump;
 
         public SkiJumper(String firstName, String lastName,double resultOfJump) {
             this.firstName = firstName;
@@ -13,7 +13,18 @@ public class SkiJumper {
 
         }
 
-        public String getFirstName() {
+    public SkiJumper() {
+    }
+
+    public double getResultOfJump() {
+        return resultOfJump;
+    }
+
+    public void setResultOfJump(double resultOfJump) {
+        this.resultOfJump = resultOfJump;
+    }
+
+    public String getFirstName() {
             return firstName;
         }
 
@@ -29,12 +40,13 @@ public class SkiJumper {
             this.lastName = lastName;
         }
 
-        @Override
-        public String toString() {
-            return "SkiJumper{" +
-                    "firstName='" + firstName + '\'' +
-                    ", lastName='" + lastName + '\'' +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "SkiJumper{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", resultOfJump=" + resultOfJump +
+                '}';
     }
+}
 
