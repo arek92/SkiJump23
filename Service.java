@@ -7,19 +7,22 @@ import java.util.Scanner;
 
 public class Service {
 
-    private static Jurors jurors = new Jurors();
-    private static final int beamHigh = 5;
-    private static Service service = new Service();
+    private static final Jurors jurors = new Jurors();
+    //private static final int beamHigh = 5;
+    private static final Service service = new Service();
 
 
 
 
-    public static double jumpAndGetScoreOfSingleJump() {
+
+
+
+    public static double resultOfJumpJurorsWindCondition() {
         double noteForJumpLenght = service.provideLenghtOfJumpAndCountNote();
         double noteForStyle = service.rateJumpByJurors();
         double pointsForJumpLenghtAndStyle = noteForJumpLenght + noteForStyle;
         System.out.println("Points to save from JumpLenght and JurorsStyle are : " + " " + pointsForJumpLenghtAndStyle);
-        double finalNoteOfJumper = service.getPointsFromJumpStyleWindAndBeam(pointsForJumpLenghtAndStyle);
+        double finalNoteOfJumper = service.JumpStyleWindCountResult(pointsForJumpLenghtAndStyle);
         return finalNoteOfJumper;
 
 
@@ -33,7 +36,7 @@ public class Service {
         return noteForWindCondition;
     }
 
-    public static double getPointsFromJumpStyleWindAndBeam(double pointsForJumpLenghtAndStyle) {
+    public static double JumpStyleWindCountResult(double pointsForJumpLenghtAndStyle) {
         Scanner scanner = new Scanner(System.in);
         String windStatus;
         System.out.println("Wind conditions were good or bad ");
@@ -46,19 +49,20 @@ public class Service {
         if (windStatus.equals("good")) {
             double noteAfterCheckingWindCondition = pointsForJumpLenghtAndStyle - noteForWindCondition;
             System.out.println("we have to subtract points for wind in case of good Conditions and note of jumper is : " + " " + noteAfterCheckingWindCondition);
-            double result = checkBeam(noteAfterCheckingWindCondition);
-            return result;
+            //double result = checkBeam(noteAfterCheckingWindCondition);
+            //return result;
+            return noteAfterCheckingWindCondition;
 
         } else {
             double noteAfterCheckingWindCondition = pointsForJumpLenghtAndStyle + noteForWindCondition;
             System.out.println("we have to add points for wind in case of bad Conditions and note of jumper is " + " " + noteAfterCheckingWindCondition);
-            double result1 = checkBeam(noteAfterCheckingWindCondition);
-            return result1;
+            return noteAfterCheckingWindCondition;
         }
 
     }
 
 
+    /*
     public static double checkBeam(double noteAfterCheckingWindCondition) {
         Scanner scanner = new Scanner(System.in);
             int numberOfBeam;
@@ -87,6 +91,8 @@ public class Service {
             }
 
         }
+
+     */
 
 
 
