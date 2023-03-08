@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -6,7 +7,6 @@ public class Main {
 
     private static SkiTeam skiTeam = new SkiTeam();
     private static Jurors jurors = new Jurors();
-    private static Service service = new Service();
     private static SkiJumper jumper = new SkiJumper();
     private static Beam beam = new Beam();
     private final int beamStart = 15;
@@ -14,42 +14,26 @@ public class Main {
 
     public static void main(String[] args) {
 
-        double resultOfJump = service.resultOfJumpJurorsWindCondition();
-        /**
-         * ustawiamy belke zawodow na 15
-         * pierwszy skoczek skoczy z 15 belki
-         * pozostały przed skokiem musi byc pytany co robimy z belka czy zostaje czy jakas zmiana
-         * w zależnosci od tego dodaj pkt za belke
-         *
-         */
 
-        SkiJumper jumper1 = new SkiJumper("Adam","Małysz",resultOfJump);
+        List<SkiJumper>jumperList = new ArrayList<>();
+        jumperList.add(new SkiJumper("Kamil","Stoch"));
+        jumperList.add(new SkiJumper("Adam","Małysz"));
 
-        System.out.println(jumper1);
-        double resultOfJumper1 = jumper1.getResultOfJump();
-
-
-        List<Double>listOfResult = new ArrayList<>();
-        listOfResult.add(resultOfJumper1);
-
-        for (Double aDouble : listOfResult) {
-            System.out.println(aDouble);
+        for (SkiJumper skiJumper : jumperList) {
+            double resultOfSingleJumper = competition(skiJumper);
+            System.out.println("Jumper is : " + skiJumper + " " + " his result is : " + " " + resultOfSingleJumper);
 
         }
 
-        /**
-         * jaki jest cel? wez z listy nowego skoczka
-         * niech skoczy
-         * wyswietl resultat
-         * wyciagni getterem
-         */
 
 
 
+    }
 
+    public static double competition(SkiJumper jumper){
+        double resultOfJumper = jumper.resultOfJumpJurorsWindCondition();
 
-
-
+        return resultOfJumper;
     }
 
 
