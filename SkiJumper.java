@@ -4,11 +4,13 @@ public class SkiJumper {
         private String lastName;
 
         private Service service = new Service();
+        private double resultOfJump = service.resultOfJumpJurorsWindCondition();
 
-        public SkiJumper(String firstName, String lastName) {
+        public SkiJumper(String firstName, String lastName,double resultOfJump) {
             this.firstName = firstName;
             this.lastName = lastName;
-            service.jumpAndGetScoreOfSingleJump();
+            this.resultOfJump = resultOfJump;
+
         }
 
         public String getFirstName() {

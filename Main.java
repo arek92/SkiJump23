@@ -1,6 +1,4 @@
-
-import java.text.DecimalFormat;
-import java.util.*;
+import java.util.List;
 
 public class Main {
 
@@ -11,8 +9,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        double finalNoteOfJumper = service.jumpAndGetScoreOfSingleJump();
-        System.out.println(finalNoteOfJumper);
+       // double finalNoteOfJumper = service.resultOfJumpJurorsWindCondition();
+       // System.out.println(finalNoteOfJumper); //jump + juror + wind
+
+//        SkiJumper jumper = new SkiJumper("Adam","Małysz",service.resultOfJumpJurorsWindCondition());
+//        System.out.println(jumper);
+
+        List<SkiJumper> germanTeam = skiTeam.germanTeam();
+        System.out.println(germanTeam);
+
 
 
 
