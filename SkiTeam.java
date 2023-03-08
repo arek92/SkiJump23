@@ -10,7 +10,7 @@ public class SkiTeam {
 
     private List<SkiJumper> jumperList;
 
-    private Service service= new Service();
+
 
     public SkiTeam(List<SkiJumper> jumperList) {
         this.jumperList = jumperList;
@@ -20,8 +20,8 @@ public class SkiTeam {
 //        List<SkiJumper> germanTeam = new ArrayList<>();
 //        germanTeam.add(new SkiJumper("Andreas", "Welinger"));
 //        germanTeam.add(new SkiJumper("Martin ", "Schmitt"));
-//        //germanTeam.add(new SkiJumper("Markus", "Eichenbichler",service.resultOfJumpJurorsWindCondition()));
-//       // germanTeam.add(new SkiJumper("Sven", "Hanavald",service.resultOfJumpJurorsWindCondition()));
+//        germanTeam.add(new SkiJumper("Markus", "Eichenbichler"));
+//        germanTeam.add(new SkiJumper("Sven", "Hanavald");
 //        return germanTeam;
 //    }
 
