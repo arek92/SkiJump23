@@ -5,25 +5,16 @@ import java.util.List;
 
 public class SkiTeam {
 
-    public SkiTeam() {
+
+
+    public List<SkiJumper> germanTeam() {
+        List<SkiJumper> germanTeam = new ArrayList<>();
+        germanTeam.add(new SkiJumper("Andreas", "Welinger"));
+        germanTeam.add(new SkiJumper("Martin ", "Schmitt"));
+        germanTeam.add(new SkiJumper("Markus", "Eichenbichler"));
+        germanTeam.add(new SkiJumper("Sven", "Hanavald"));
+        return germanTeam;
     }
-
-    private List<SkiJumper> jumperList;
-
-
-
-    public SkiTeam(List<SkiJumper> jumperList) {
-        this.jumperList = jumperList;
-    }
-
-//    public List<SkiJumper> germanTeam() {
-//        List<SkiJumper> germanTeam = new ArrayList<>();
-//        germanTeam.add(new SkiJumper("Andreas", "Welinger"));
-//        germanTeam.add(new SkiJumper("Martin ", "Schmitt"));
-//        germanTeam.add(new SkiJumper("Markus", "Eichenbichler"));
-//        germanTeam.add(new SkiJumper("Sven", "Hanavald");
-//        return germanTeam;
-//    }
 
     /*
     public List<SkiJumper> slovakiaTeam() {
