@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -14,31 +11,64 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("Welcome in our Ski Jumping Competition");
 
-        List<SkiJumper>jumperList = new ArrayList<>();
-        jumperList.add(new SkiJumper("Kamil","Stoch"));
-        jumperList.add(new SkiJumper("Adam","Małysz"));
+        showListOfJumpers();
 
-        for (SkiJumper skiJumper : jumperList) {
-            double resultOfSingleJumper = competition(skiJumper);
-            System.out.println("Jumper is : " + skiJumper + " " + " his result is : " + " " + resultOfSingleJumper);
+        System.out.println(mapResult());
+
+    }
+
+
+    private static void showListOfJumpers() {
+        Map<Integer,SkiJumper> jumperList= new HashMap<>();
+        List<SkiJumper>germanTeam = skiTeam.germanTeam();
+        jumperList.put(1,germanTeam.get(0));
+        jumperList.put(2,germanTeam.get(1));
+        jumperList.put(3,germanTeam.get(2));
+        jumperList.put(4,germanTeam.get(3));
+
+
+        Set<Map.Entry<Integer, SkiJumper>> entries = jumperList.entrySet();
+        for (Map.Entry<Integer, SkiJumper> entry : entries) {
+            System.out.println(entry.getKey() + " "  + entry.getValue());
+
 
         }
 
 
-
-
     }
 
-    public static double competition(SkiJumper jumper){
+    public static double competition (SkiJumper jumper){
         double resultOfJumper = jumper.resultOfJumpJurorsWindCondition();
 
         return resultOfJumper;
     }
 
 
+    public static Map<Integer, String> mapResult() {
+        Map<Integer, String> finalResultMap = new HashMap<>();
+        List<SkiJumper> jumperList = skiTeam.germanTeam();
+        int counter = 0;
 
+        for (SkiJumper skiJumper : jumperList) {
+
+            double resultOfSingleJumper = competition(skiJumper);
+            counter++;
+            String result = "" + skiJumper + " " + "  " + " " + resultOfSingleJumper;
+            finalResultMap.put(counter, result);
+
+        }
+
+
+
+
+
+        return finalResultMap;
+    }
 }
+
+
 
 
 
