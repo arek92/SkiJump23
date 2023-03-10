@@ -8,6 +8,8 @@ public class SkiJumper {
         private String firstName;
         private String lastName;
         private static final Jurors jurors = new Jurors();
+        private Nationality nationality;
+
 
 
 
@@ -15,9 +17,11 @@ public class SkiJumper {
     public SkiJumper() {
     }
 
-    public SkiJumper(String firstName, String lastName) {
+    public SkiJumper(String firstName, String lastName,Nationality nationality) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.nationality = nationality;
+
     }
 
 
@@ -38,13 +42,16 @@ public class SkiJumper {
             this.lastName = lastName;
         }
 
+
     @Override
     public String toString() {
         return "SkiJumper{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", nationality=" + nationality +
                 '}';
     }
+
     public static double resultOfJumpJurorsWindCondition() {
         double noteForJumpLenght = provideLenghtOfJumpAndCountNote();
         double noteForStyle = rateJumpByJurors();
