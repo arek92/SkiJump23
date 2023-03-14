@@ -1,11 +1,10 @@
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SkiService {
 
     static Jumpers skiTeam = new Jumpers();
+    static ResultFinal resultFinal = new ResultFinal();
 
     public static void showListOfJumpers() {
         Map<Integer, SkiJumper> jumperMap= new HashMap<>();
@@ -13,7 +12,7 @@ public class SkiService {
         jumperMap.put(1,germanTeam.get(0));
         jumperMap.put(2,germanTeam.get(1));
         jumperMap.put(3,germanTeam.get(2));
-        jumperMap.put(4,germanTeam.get(3));
+      //  jumperMap.put(4,germanTeam.get(3));
 
 
         Set<Map.Entry<Integer, SkiJumper>> entries = jumperMap.entrySet();
@@ -34,8 +33,8 @@ public class SkiService {
     }
 
 
-    public static Map<Integer, String> showResult() {
-        Map<Integer, String> finalResultMap = new HashMap<>();
+    public static void showResult() {
+        Map<Integer, ResultFinal> finalResultMap = new HashMap<>();
         List<SkiJumper> jumperList = skiTeam.jumpers();
         int counter = 0;
         int jumperNumber = 0;
@@ -44,17 +43,24 @@ public class SkiService {
 
             System.out.println("The next jumper on the list is : " + jumperList.get(jumperNumber));
             double resultOfSingleJumper = jump(skiJumper);
+            ResultFinal resultFinal = new ResultFinal(skiJumper,resultOfSingleJumper);
             counter++;
             jumperNumber++;
-            String result = "" + skiJumper + " " + "  " + " " + resultOfSingleJumper;
-            finalResultMap.put(counter, result);
+            finalResultMap.put(counter,resultFinal);
+            Collection<ResultFinal> values = finalResultMap.values();
+            List<ResultFinal> collect = values
+                    .stream()
+                    .sorted()
+                    .collect(Collectors.toList());
+
+            System.out.println(collect);
+
 
         }
 
-
-
-
-
-        return finalResultMap;
     }
+
+
+
 }
+
