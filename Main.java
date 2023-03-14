@@ -1,3 +1,5 @@
+import java.util.List;
+
 ;
 
 public class Main {
@@ -15,9 +17,14 @@ public class Main {
         System.out.println("Welcome in our Ski Jumping Competition");
         System.out.println("jumpers of todays jumpersCompetition are : ");
 
-        skiService.showListOfJumpers();
+        List<SkiJumper> jumperList = skiService.showListOfJumpers();
+        for (SkiJumper skiJumper : jumperList) {
+            System.out.println(skiJumper);
 
-       skiService.showResult();
+        }
+
+
+        skiService.showResult();
 
     }
 

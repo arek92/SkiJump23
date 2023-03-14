@@ -3,26 +3,12 @@ import java.util.stream.Collectors;
 
 public class SkiService {
 
-    static Jumpers skiTeam = new Jumpers();
-    static ResultFinal resultFinal = new ResultFinal();
-
-    public static void showListOfJumpers() {
-        Map<Integer, SkiJumper> jumperMap= new HashMap<>();
-        List<SkiJumper> germanTeam = skiTeam.jumpers();
-        jumperMap.put(1,germanTeam.get(0));
-        jumperMap.put(2,germanTeam.get(1));
-        jumperMap.put(3,germanTeam.get(2));
-      //  jumperMap.put(4,germanTeam.get(3));
+    static Jumpers jumpersInCompetitions = new Jumpers();
 
 
-        Set<Map.Entry<Integer, SkiJumper>> entries = jumperMap.entrySet();
-        for (Map.Entry<Integer, SkiJumper> entry : entries) {
-            System.out.println(entry.getKey() + " "  + entry.getValue());
-
-
-        }
-
-
+    public static List<SkiJumper> showListOfJumpers() {
+        List<SkiJumper> germanTeam = jumpersInCompetitions.jumpers();
+        return germanTeam;
     }
 
     public static double jump(SkiJumper jumper){
@@ -35,7 +21,7 @@ public class SkiService {
 
     public static void showResult() {
         Map<Integer, ResultFinal> finalResultMap = new HashMap<>();
-        List<SkiJumper> jumperList = skiTeam.jumpers();
+        List<SkiJumper> jumperList = jumpersInCompetitions.jumpers();
         int counter = 0;
         int jumperNumber = 0;
 

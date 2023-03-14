@@ -3,6 +3,8 @@ import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class SkiJumper {
 
         private String firstName;
@@ -65,9 +67,7 @@ public class SkiJumper {
 
     public static double countNoteForWindConditions(double forceWindms) {
         double noteForWindFinal = 5.00;
-        System.out.println("1 m/s = 5.00 points of note");
         double noteForWindCondition = noteForWindFinal * forceWindms;
-
         return noteForWindCondition;
     }
 
@@ -83,12 +83,12 @@ public class SkiJumper {
         double noteForWindCondition = countNoteForWindConditions(forceWindDouble);
         if (windStatus.equals("good")) {
             double noteAfterCheckingWindCondition = pointsForJumpLenghtAndStyle - noteForWindCondition;
-            System.out.println("we have to subtract points for wind in case of good Conditions and note of jumper is : " + " " + noteAfterCheckingWindCondition);
+            System.out.println("we have to subtract points for wind in case of good Conditions and final note of jumper is : " + " " + noteAfterCheckingWindCondition);
             return noteAfterCheckingWindCondition;
 
         } else {
             double noteAfterCheckingWindCondition = pointsForJumpLenghtAndStyle + noteForWindCondition;
-            System.out.println("we have to add points for wind in case of bad Conditions and note of jumper is " + " " + noteAfterCheckingWindCondition);
+            System.out.println("we have to add points for wind in case of bad Conditions and final note of jumper is " + " " + noteAfterCheckingWindCondition);
             return noteAfterCheckingWindCondition;
         }
 
@@ -109,7 +109,6 @@ public class SkiJumper {
 
     public static double countNoteForJumpOfJumperLenght(double jumpLenght) {
         System.out.println("jumpLenght of Jumper is " + jumpLenght);
-        System.out.println("Points to save for jumplenght = " + " " + jumpLenght / 2);
         double pointsForJumpLenght = jumpLenght / 2;
         ;
         return pointsForJumpLenght;

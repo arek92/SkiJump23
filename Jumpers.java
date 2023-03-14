@@ -11,7 +11,7 @@ public class Jumpers {
         jumperList.add(new SkiJumper("Janne", "Achonen",Nationality.FINLAND));
         jumperList.add(new SkiJumper("Adam  ", "Małysz",Nationality.POLAND));
         jumperList.add(new SkiJumper("Noriaki", "Kasai",Nationality.JAPAN));
-       // jumperList.add(new SkiJumper("Gregor","Schlierenzauer",Nationality.AUSTRIA));
+        jumperList.add(new SkiJumper("Gregor","Schlierenzauer",Nationality.AUSTRIA));
         return jumperList;
     }
 
