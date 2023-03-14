@@ -17,7 +17,7 @@ public class Main {
 
         skiService.showListOfJumpers();
 
-        System.out.println(skiService.showResult());
+       skiService.showResult();
 
     }
 
