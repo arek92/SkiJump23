@@ -1,3 +1,5 @@
+package dao;
+
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
@@ -9,7 +11,6 @@ public class SkiJumper {
 
         private String firstName;
         private String lastName;
-        private static final Jurors jurors = new Jurors();
         private Nationality nationality;
 
 
@@ -19,7 +20,7 @@ public class SkiJumper {
     public SkiJumper() {
     }
 
-    public SkiJumper(String firstName, String lastName,Nationality nationality) {
+    public SkiJumper(String firstName, String lastName, Nationality nationality) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.nationality = nationality;
@@ -47,7 +48,7 @@ public class SkiJumper {
 
     @Override
     public String toString() {
-        return "SkiJumper{" +
+        return "dao.SkiJumper{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", nationality=" + nationality +
@@ -65,6 +66,8 @@ public class SkiJumper {
 
     }
 
+
+    //tested
     public static double countNoteForWindConditions(double forceWindms) {
         double noteForWindFinal = 5.00;
         double noteForWindCondition = noteForWindFinal * forceWindms;
@@ -97,6 +100,8 @@ public class SkiJumper {
 
 
 
+
+    //tested
     public static double provideLenghtOfJumpAndCountNote() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Give lenght of Jumper");
@@ -106,14 +111,21 @@ public class SkiJumper {
 
         return rateForLenght;
     }
-
+//tested
     public static double countNoteForJumpOfJumperLenght(double jumpLenght) {
+        if (jumpLenght==0.0){
+            throw new IllegalArgumentException("LengthJump must be higher as 0");
+        }
         System.out.println("jumpLenght of Jumper is " + jumpLenght);
         double pointsForJumpLenght = jumpLenght / 2;
         ;
         return pointsForJumpLenght;
     }
 
+
+
+
+    //tested
     public static List<Juror> showListOfJurors() {
         List<Juror> jurors = new ArrayList<>();
         jurors.add(new Juror(1, SkiJuror.SPAIN));
@@ -125,12 +137,15 @@ public class SkiJumper {
     }
 
 
+
+    //tested
     public static List<Double> listOfJurorsNotes(double points1, double points2, double points3, double points4, double points5) {
-        double note1 = jurors.juror1.setNoteForJump(points1);
-        double note2 = jurors.juror2.setNoteForJump(points2);
-        double note3 = jurors.juror3.setNoteForJump(points3);
-        double note4 = jurors.juror4.setNoteForJump(points4);
-        double note5 = jurors.juror5.setNoteForJump(points5);
+        List<Juror>jurorList = showListOfJurors();
+        double note1 = jurorList.get(0).setNoteForJump(points1);
+        double note2 = jurorList.get(1).setNoteForJump(points2);
+        double note3 = jurorList.get(2).setNoteForJump(points3);
+        double note4 = jurorList.get(3).setNoteForJump(points4);
+        double note5 = jurorList.get(4).setNoteForJump(points5);
         List<Double> notesList = new ArrayList<>();
         notesList.add(note1);
         notesList.add(note2);

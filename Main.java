@@ -1,3 +1,7 @@
+import dao.Jumpers;
+import dao.SkiJumper;
+import service.SkiService;
+
 import java.util.List;
 
 ;
@@ -5,10 +9,7 @@ import java.util.List;
 public class Main {
 
     private static Jumpers skiTeam = new Jumpers();
-    private static Jurors jurors = new Jurors();
     private static SkiJumper jumper = new SkiJumper();
-    private static Beam beam = new Beam();
-    private final int beamStart = 15;
     private static SkiService skiService = new SkiService();
 
 

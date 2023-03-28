@@ -1,3 +1,7 @@
+package service;
+
+import service.ResultFinal;
+
 import java.util.Comparator;
 
 public class TestComparatorClass implements Comparator<ResultFinal> {

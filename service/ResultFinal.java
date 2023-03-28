@@ -1,4 +1,6 @@
-import java.util.Comparator;
+package service;
+
+import dao.SkiJumper;
 
 public class ResultFinal implements Comparable {
 
@@ -31,7 +33,7 @@ public class ResultFinal implements Comparable {
 
     @Override
     public String toString() {
-        return "ResultFinal{" +
+        return "service.ResultFinal{" +
                 "jumper=" + jumper +
                 ", result=" + result +
                 '}';
