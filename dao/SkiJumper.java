@@ -14,9 +14,6 @@ public class SkiJumper {
         private Nationality nationality;
 
 
-
-
-
     public SkiJumper() {
     }
 
@@ -28,24 +25,6 @@ public class SkiJumper {
     }
 
 
-
-    public String getFirstName() {
-            return firstName;
-        }
-
-        public void setFirstName(String firstName) {
-            this.firstName = firstName;
-        }
-
-        public String getLastName() {
-            return lastName;
-        }
-
-        public void setLastName(String lastName) {
-            this.lastName = lastName;
-        }
-
-
     @Override
     public String toString() {
         return "dao.SkiJumper{" +
@@ -53,6 +32,23 @@ public class SkiJumper {
                 ", lastName='" + lastName + '\'' +
                 ", nationality=" + nationality +
                 '}';
+    }
+
+
+    public static double  provideLenghtOfJumpAndCountNote() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give lenght of Jumper");
+        double lengthOfJump;
+        lengthOfJump = scanner.nextDouble();
+        if (lengthOfJump==0.0 || lengthOfJump<0){
+            throw new IllegalArgumentException("LengthJump must be higher as 0");
+        }
+        System.out.println("jumpLenght of Jumper is " + lengthOfJump);
+
+         lengthOfJump = lengthOfJump/2;
+        System.out.println("Points to save from jumpLenght = " + " " + lengthOfJump);
+
+        return lengthOfJump;
     }
 
     public static double resultOfJumpJurorsWindCondition() {
@@ -67,13 +63,6 @@ public class SkiJumper {
     }
 
 
-    //tested
-    public static double countNoteForWindConditions(double forceWindms) {
-        double noteForWindFinal = 5.00;
-        double noteForWindCondition = noteForWindFinal * forceWindms;
-        return noteForWindCondition;
-    }
-
     public static double JumpStyleWindCountResult(double pointsForJumpLenghtAndStyle) {
         Scanner scanner = new Scanner(System.in);
         String windStatus;
@@ -83,7 +72,7 @@ public class SkiJumper {
         int forceWind;
         forceWind = scanner.nextInt();
         double forceWindDouble = forceWind / 10.0;
-        double noteForWindCondition = countNoteForWindConditions(forceWindDouble);
+        double noteForWindCondition = forceWindDouble;
         if (windStatus.equals("good")) {
             double noteAfterCheckingWindCondition = pointsForJumpLenghtAndStyle - noteForWindCondition;
             System.out.println("we have to subtract points for wind in case of good Conditions and final note of jumper is : " + " " + noteAfterCheckingWindCondition);
@@ -96,32 +85,6 @@ public class SkiJumper {
         }
 
     }
-
-
-
-
-
-    //tested
-    public static double provideLenghtOfJumpAndCountNote() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Give lenght of Jumper");
-        double lengthOfJump;
-        lengthOfJump = scanner.nextDouble();
-        double rateForLenght = countNoteForJumpOfJumperLenght(lengthOfJump);
-
-        return rateForLenght;
-    }
-//tested
-    public static double countNoteForJumpOfJumperLenght(double jumpLenght) {
-        if (jumpLenght==0.0){
-            throw new IllegalArgumentException("LengthJump must be higher as 0");
-        }
-        System.out.println("jumpLenght of Jumper is " + jumpLenght);
-        double pointsForJumpLenght = jumpLenght / 2;
-        ;
-        return pointsForJumpLenght;
-    }
-
 
 
 
