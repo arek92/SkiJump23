@@ -66,13 +66,24 @@ public class SkiJumper {
     public static double JumpStyleWindCountResult(double pointsForJumpLenghtAndStyle) {
         Scanner scanner = new Scanner(System.in);
         String windStatus;
-        System.out.println("Wind conditions were good or bad ");
-        windStatus = scanner.next();
+        final double windPoint = 5.00;
+        do {
+            System.out.println("Wind conditions were good or bad ");
+            windStatus = scanner.next();
+            if (windStatus.equals("good") || windStatus.equals("bad")) {
+                continue;
+            }
+
+            System.err.println("please input good or bad ");
+
+        }
+        while (!windStatus.equals("good") && !windStatus.equals("bad"));
+
         System.out.println("Give force of wind in as number from 1-10 where 10 = 1m/s");
         int forceWind;
         forceWind = scanner.nextInt();
         double forceWindDouble = forceWind / 10.0;
-        double noteForWindCondition = forceWindDouble;
+        double noteForWindCondition = forceWindDouble * windPoint;
         if (windStatus.equals("good")) {
             double noteAfterCheckingWindCondition = pointsForJumpLenghtAndStyle - noteForWindCondition;
             System.out.println("we have to subtract points for wind in case of good Conditions and final note of jumper is : " + " " + noteAfterCheckingWindCondition);

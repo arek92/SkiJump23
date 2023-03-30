@@ -42,12 +42,12 @@ public class SkiService {
             List<ResultFinal> collect = values
                     .stream()
                     .sorted()
-                    .collect(Collectors.toList());
+                   .collect(Collectors.toList());
 
             System.out.println(collect);
 
 
-        }
+       }
 
     }
 
