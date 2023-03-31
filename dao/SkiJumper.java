@@ -79,9 +79,19 @@ public class SkiJumper {
         }
         while (!windStatus.equals("good") && !windStatus.equals("bad"));
 
-        System.out.println("Give force of wind in as number from 1-10 where 10 = 1m/s");
         int forceWind;
-        forceWind = scanner.nextInt();
+        do {
+
+            System.out.println("Give force of wind in as number from 1-10 where 10 = 1m/s");
+
+            forceWind = scanner.nextInt();
+            if (forceWind > 0) {
+                continue;
+            }
+            System.err.println("force wind must be higher than zero please input correct value");
+
+        } while(!(forceWind >0));
+
         double forceWindDouble = forceWind / 10.0;
         double noteForWindCondition = forceWindDouble * windPoint;
         if (windStatus.equals("good")) {
